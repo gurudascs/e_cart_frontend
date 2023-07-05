@@ -1,0 +1,67 @@
+
+                                  E-Cart-Frontend
+                        -----------------------------------
+
+1. Create a folder ECart
+
+2. Inside in it, create an angular application -> ng new e-cart-frontend
+
+3. cd e-cart-frontend
+
+4. code .
+
+5. Run angular application -> ng s --o
+
+6. Clear code in app.component.html
+
+7. Import 3rd party libraries
+       -> bootstrap(index.html)
+       -> font-awesome
+       -> google fonts(style.css)
+
+8. LAZY LOADING
+       -> Lazy loading helps keep initial bundle sizes smaller, which in turn helps decrease loa times.
+       -> Lazy loading is an approach to limit the modules that are loaded to the ones that the user currently needs.
+          This can be improve your application's performance and reduce the initial bundle size.
+
+       We have one module in our application - app.module
+       Here we create another module - 
+       -> Generate module - ng g m products --route products --module app.module    
+
+9. Component generation
+       -> ng g c products/allProducts
+       -> ng g c products/viewProduct
+       -> ng g c products/wishList
+       -> ng g c products/cart
+
+       Not in lazy loading
+       -> ng g c header
+       -> ng g c footer
+       -> ng g c pageNotFound   
+
+10. Setup path
+       -> put <router-outlet></router-outlet> in app.component.html
+       -> products.routing.module.ts 
+
+11. API Integration
+       -> import HttpClientModule in app.module.ts
+       -> create a services inside product module - for API calling
+            - ng g s products/services/api 
+       -> inside api.services file,
+            - create and use http dependency injection
+            - also create a function for (getAllProducts()) fetching all products details
+       -> inside all-products.component file
+            - create and use api dependency injection
+            - also create a function for integrating api service 
+            - get all product details
+       -> Wishlist functionality completed
+
+12. product search
+       -> ng g p products/pipes/filter  
+       -> Behavior Subjects
+           If the data is confined to a single component there is (almost) no need for observables. 
+           If the data needs to be shared among multiple components however, it is stored in singleton services.
+           And components have no way of knowing the state of data in the service.
+           So observables are used to tell the components the state of the data has been changed.
+
+13. Cart functionality           

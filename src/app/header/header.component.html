@@ -1,0 +1,42 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light text-white bg-black">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand text-white" routerLink="">
+            <i class="fa-solid fa-cart-shopping fa-bounce text-light"></i> G-CART
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <div class="col-2"></div>
+            <div class="col-4">
+                <!-- search -->
+                <input (keyup)="search($event)" type="text" placeholder="Search your product">
+            </div>
+            <div class="col-3"></div>
+            <div class="col-4">
+                <form class="d-flex align-items">
+
+                    <!-- wishlist button -->
+                    <button class="btn btn-outline-light me-4" type="submit" routerLink="products/wishlist">
+                        <i class="fa-solid fa-heart fa-beat text-danger me-1"></i>
+                        Wishlist
+                        <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
+                    </button>
+                    <!-- cart button -->
+                    <button class="btn btn-outline-light " type="submit" routerLink="products/cart">
+                        <i class="fa-solid fa-cart-shopping fa-beat text-success me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">{{cartItemsCount}}</span>
+                    </button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</nav>
+
+
+
